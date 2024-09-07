@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3 uid="uid://chow5q0ohjlr6"]
+
+[ext_resource type="Script" path="res://game/autoload/game_data.gd" id="1_oumdt"]
+[ext_resource type="Script" path="res://game/buildings/building_definition.gd" id="2_xbyb4"]
+[ext_resource type="Resource" uid="uid://c33kfgbs3y58d" path="res://game/buildings/resources/house.tres" id="3_kb25b"]
+[ext_resource type="Resource" uid="uid://cffcxd405i7xw" path="res://game/buildings/resources/windmill.tres" id="4_3lcqy"]
+[ext_resource type="Resource" uid="uid://dp7r5lmy8ig0k" path="res://game/buildings/resources/farm.tres" id="5_d131q"]
+
+[node name="Game Data" type="Node"]
+script = ExtResource("1_oumdt")
+buildings = Array[ExtResource("2_xbyb4")]([ExtResource("3_kb25b"), ExtResource("4_3lcqy"), ExtResource("5_d131q")])

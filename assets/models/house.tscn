@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv4d2qiaiu6th"]
+
+[ext_resource type="Material" uid="uid://b02s47cthkev" path="res://assets/materials/concrete.tres" id="1_btnp1"]
+[ext_resource type="Material" uid="uid://r8s760pottds" path="res://assets/materials/roof.tres" id="2_y7que"]
+[ext_resource type="Material" uid="uid://d0v7qqiri2asu" path="res://assets/materials/wood.tres" id="3_2ywnv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5t4ef"]
+material = ExtResource("1_btnp1")
+
+[sub_resource type="PrismMesh" id="PrismMesh_6q8uf"]
+material = ExtResource("2_y7que")
+size = Vector3(1.2, 0.72, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ngu3"]
+material = ExtResource("3_2ywnv")
+size = Vector3(0.2, 0.4, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elqv6"]
+albedo_color = Color(0.686275, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7pmry"]
+material = SubResource("StandardMaterial3D_elqv6")
+size = Vector3(0.3, 0.3, 0.1)
+
+[node name="House" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5t4ef")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842397, 0)
+mesh = SubResource("PrismMesh_6q8uf")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.260698, 0.504872)
+mesh = SubResource("BoxMesh_1ngu3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.266407, 0.207934, 0.485669)
+mesh = SubResource("BoxMesh_7pmry")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266, 0.208, 0.486)
+mesh = SubResource("BoxMesh_7pmry")

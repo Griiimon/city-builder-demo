@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" load_steps=5 format=3 uid="uid://c33kfgbs3y58d"]
+
+[ext_resource type="Script" path="res://game/buildings/placement conditions/base_building_placement_condition.gd" id="1_sgxbc"]
+[ext_resource type="Script" path="res://game/buildings/building_definition.gd" id="1_sv3f5"]
+[ext_resource type="Script" path="res://game/buildings/placement conditions/placement_condition_terrain.gd" id="2_wdylg"]
+
+[sub_resource type="Resource" id="Resource_nhe2v"]
+script = ExtResource("2_wdylg")
+terrain_whitelist = Array[int]([])
+terrain_blacklist = Array[int]([2])
+
+[resource]
+script = ExtResource("1_sv3f5")
+name = "House"
+tile_set_source = 1
+tile_set_coords = Vector2i(0, 0)
+placement_conditions = Array[ExtResource("1_sgxbc")]([SubResource("Resource_nhe2v")])

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" load_steps=8 format=3 uid="uid://dp7r5lmy8ig0k"]
+
+[ext_resource type="Script" path="res://game/buildings/building_definition.gd" id="1_5cwn0"]
+[ext_resource type="Script" path="res://game/buildings/placement conditions/base_building_placement_condition.gd" id="1_e5rmr"]
+[ext_resource type="Script" path="res://game/buildings/placement conditions/placement_condition_terrain.gd" id="2_sqsli"]
+[ext_resource type="Resource" uid="uid://cffcxd405i7xw" path="res://game/buildings/resources/windmill.tres" id="3_q5x6v"]
+[ext_resource type="Script" path="res://game/buildings/placement conditions/placement_condition_building_radius.gd" id="4_3sm21"]
+
+[sub_resource type="Resource" id="Resource_qaebb"]
+script = ExtResource("2_sqsli")
+terrain_whitelist = Array[int]([1])
+terrain_blacklist = Array[int]([])
+
+[sub_resource type="Resource" id="Resource_nl843"]
+script = ExtResource("4_3sm21")
+required_building = ExtResource("3_q5x6v")
+max_distance = 2
+
+[resource]
+script = ExtResource("1_5cwn0")
+name = "Farm"
+tile_set_source = 1
+tile_set_coords = Vector2i(2, 0)
+placement_conditions = Array[ExtResource("1_e5rmr")]([SubResource("Resource_qaebb"), SubResource("Resource_nl843")])

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddmjtdmtpgucn"]
+
+[ext_resource type="Script" path="res://tools/photobooth/photobooth.gd" id="1_y63dq"]
+[ext_resource type="PackedScene" uid="uid://lrbng0j11mm5" path="res://assets/models/windmill.tscn" id="2_f872t"]
+[ext_resource type="Script" path="res://tools/photobooth/frame_rect.gd" id="3_acprw"]
+
+[sub_resource type="Environment" id="Environment_42njt"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+
+[node name="Photobooth" type="Node3D"]
+script = ExtResource("1_y63dq")
+model = ExtResource("2_f872t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame Rect" type="Control" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+script = ExtResource("3_acprw")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CenterContainer"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+environment = SubResource("Environment_42njt")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+light_size = 1.0
+omni_range = 10.0
+omni_attenuation = 0.176777

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://lrbng0j11mm5"]
+
+[ext_resource type="Material" uid="uid://b02s47cthkev" path="res://assets/materials/concrete.tres" id="1_kf3np"]
+[ext_resource type="Material" uid="uid://d0v7qqiri2asu" path="res://assets/materials/wood.tres" id="2_rv1m5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jhvfg"]
+top_radius = 0.4
+bottom_radius = 0.64
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wawpd"]
+radius = 0.525
+height = 1.345
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ws7"]
+albedo_color = Color(0.769432, 0.769432, 0.769432, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bpftr"]
+material = SubResource("StandardMaterial3D_71ws7")
+size = Vector3(3, 0.35, 0.05)
+
+[node name="Windmill" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = ExtResource("1_kf3np")
+mesh = SubResource("CylinderMesh_jhvfg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = ExtResource("2_rv1m5")
+mesh = SubResource("CapsuleMesh_wawpd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.733505, 0.679685, 0, -0.679685, 0.733505, 0, 0, 0, 1, 0, 2, 0.539199)
+mesh = SubResource("BoxMesh_bpftr")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.679685, -0.733505, 0, 0.733505, 0.679685, 0, 0, 0, 1, 0, 2, 0.539199)
+mesh = SubResource("BoxMesh_bpftr")
